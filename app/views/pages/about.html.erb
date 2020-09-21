@@ -1,0 +1,26 @@
+<h1>Here's our about page</h1>
+
+
+<h2>Meet our team</h2>
+
+<ol>
+  <% @members.each do |member| %>
+    <li><%= member.capitalize %></li>
+  <% end %>
+</ol>
+
+
+<%= link_to 'Go to contacts', contact_path %>
+
+<%= link_to 'Go to home', root_path %>
+
+<br>
+<br>
+<br>
+<br>
+<form action="/about" method="get">
+  <input type="text" name="member" value="<%= params["member"] %>" placeholder="Who are you looking for?">
+  <input type="submit">
+</form>
+
+<%= link_to 'clear', about_path %>
